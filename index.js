@@ -100,11 +100,10 @@ if(contenido === 'que' || contenido == "Que" || contenido=="Qué" || contenido =
     }
 
     //si le llega una imagen y tiene el comando Sticker, la guarda y la envia como sticker
-    if(message.hasMedia && contenido === 'Sticker' || message.hasMedia && contenido === 'sticker'){
+    if(message.hasMedia && contenido === 'Sticker' && message.type == "image"|| message.type == "image" && message.hasMedia && contenido === 'sticker'){
         const media = await message.downloadMedia()
-        if(media.mimetype == "image" ){
             message.reply(media, null, {stickerAuthor: 'by camus', stickerName: "JaydenBot", sendMediaAsSticker: true})
-        }
+
     }
     
 });
