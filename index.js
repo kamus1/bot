@@ -1,7 +1,8 @@
 const qrcode = require('qrcode-terminal');
 const axios = require('axios');
 const fs = require('fs')
-const port = 5000;
+
+const port = process.env.PORT || 8000;
 
 //autenticacion del bot con qr
 const { Client, LocalAuth, MessageMedia, MessageAck } = require('whatsapp-web.js');
