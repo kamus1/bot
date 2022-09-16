@@ -9,7 +9,7 @@ app.set('port', (process.env.PORT || 8000));
 
 //for avoid heroku port
 app.get('/', function(request, response) {
-    var result = "app is running"
+    var result = "JaydenBot está activado."
     response.send(result);
 }).listen(app.get('port'), function() {
     console.log("app is running, server is listening on port", app.get("port"));
