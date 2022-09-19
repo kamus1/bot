@@ -86,24 +86,11 @@ if(contenido === 'que' || contenido == "Que" || contenido=="Qué" || contenido =
         
         client.sendMessage(message.from, await MessageMedia.fromUrl(meme.url))
     }
-    //envia imagen default
-    if(contenido === 'Imagen') {
-        client.sendMessage(message.from,MessageMedia.fromFilePath('./Pong.png') )
-
-	}
-    //envia la imagen default como sticker
-    if(contenido === 'StickerDefault') {
-        const sticker = MessageMedia.fromFilePath('./Pong.png');
-
-        message.reply(sticker, null, {stickerAuthor: 'JaydenBot', sendMediaAsSticker: true})
-
-    }
-
     //si le llega una imagen y tiene el comando Sticker, la guarda y la envia como sticker
-    if(message.hasMedia && contenido === 'Sticker' && message.type == "image"|| message.type == "image" && message.hasMedia && contenido === 'sticker'){
+    if(message.hasMedia && contenido === 'Sticker'){
         const media = await message.downloadMedia()
-            message.reply(media, null, {stickerAuthor: 'by camus', stickerName: "JaydenBot", sendMediaAsSticker: true})
-
+     
+        message.reply(media, null, {stickerAuthor: 'by camus', stickerName: "JaydenBot", sendMediaAsSticker: true})
     }
     
 });
