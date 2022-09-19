@@ -23,7 +23,6 @@ const puppeteerOptions = {
   headless: true,
   args: ['--no-sandbox'],
   headless: false,
-  executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
 
 }
 
