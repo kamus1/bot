@@ -22,7 +22,8 @@ const { Client, LocalAuth, MessageMedia, MessageAck } = require('whatsapp-web.js
 const puppeteerOptions = {
   headless: true,
   args: ['--no-sandbox'],
-  executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+  headless: false,
+  executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
 
 }
 
