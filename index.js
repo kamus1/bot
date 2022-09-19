@@ -20,10 +20,8 @@ app.get('/', function(request, response) {
 //autenticacion del bot con qr
 const { Client, LocalAuth, MessageMedia, MessageAck } = require('whatsapp-web.js');
 const puppeteerOptions = {
-  headless: false,
+  headless: true,
   args: ['--no-sandbox'],
-  executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
-
 }
 
 
