@@ -1,6 +1,8 @@
 const qrcode = require('qrcode-terminal');
 const axios = require('axios');
 const fs = require('fs')
+const ffmpeg = require('ffmpeg');
+
 
 var express = require('express');
 var app = express();
@@ -17,12 +19,19 @@ app.get('/', function(request, response) {
 
 //autenticacion del bot con qr
 const { Client, LocalAuth, MessageMedia, MessageAck } = require('whatsapp-web.js');
+const puppeteerOptions = {
+  headless: true,
+  args: ['--no-sandbox'],
+  executablePath: '/usr/bin/google-chrome-stable'
+
+}
+
+
 const client = new Client({
-    authStrategy: new LocalAuth,
-    puppeteer:{
-	executablePath: '/usr/bin/google-chrome-stable',
-        args: ['--no-sandbox']}
-});
+  authStrategy: new LocalAuth(),
+  ffmpegPath: '/usr/bin/ffmpeg',
+  puppeteer: puppeteerOptions,
+})
 
 //qr para enlazar numero 
 client.on('qr', qr => {
