@@ -20,6 +20,7 @@ const { Client, LocalAuth, MessageMedia, MessageAck } = require('whatsapp-web.js
 const client = new Client({
     authStrategy: new LocalAuth,
     puppeteer:{
+	executablePath: '/usr/bin/google-chrome-stable',
         args: ['--no-sandbox']}
 });
 
