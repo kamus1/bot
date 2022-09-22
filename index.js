@@ -46,18 +46,6 @@ client.on('ready', () => {
         console.log(myGroup); //datos del grupo donde manda mensaje de inicio 
         client.sendMessage(myGroup.id._serialized, "Hola soy Jayden" ) //mensaje de inico 
 
-
-        //esto es solo una pruebaa para que imprima la hora por consola no es necesario
-        // create a new `Date` object
-        var today = new Date();
-
-        var moment = require('moment');
-        var now = moment().format("HH:mm A")
-        var ahora = "a"
-        if( ahora != now ){
-            console.log(now);
-            ahora = now
-        } 
     });
 
 });
