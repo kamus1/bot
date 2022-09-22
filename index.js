@@ -22,12 +22,11 @@ const { Client, LocalAuth, MessageMedia, MessageAck } = require('whatsapp-web.js
 const puppeteerOptions = {
   headless: true,
   args: ['--no-sandbox'],
+  executablePath: '/app/.apt/usr/bin/google-chrome-stable'
 }
-
 
 const client = new Client({
   authStrategy: new LocalAuth(),
-  ffmpegPath: '/usr/bin/ffmpeg',
   puppeteer: puppeteerOptions,
 })
 
